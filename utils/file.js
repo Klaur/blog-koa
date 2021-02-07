@@ -1,5 +1,6 @@
 const path = require('path')
 const fs = require('fs')
+const md5 = require('md5')
 module.exports = {
   //检查文件是否存在，不存在就创建目录
   checkDirExist(p) {
@@ -30,5 +31,10 @@ module.exports = {
     day = day.toString().length > 1 ? day : `0${day}`
     const dir = `${date.getFullYear()}${month}${day}`
     return dir
+  },
+  getMd5(file) {
+    let md5Code = md5(file)
+    console.log('md5Code', md5Code)
+    return md5Code
   }
 }

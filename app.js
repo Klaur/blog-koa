@@ -26,7 +26,6 @@ onerror(app)
 app.use(
   cors({
     origin: function (ctx) {
-      console.log(ctx)
       return ctx.header.origin
     },
     credentials: true,
@@ -66,6 +65,11 @@ app.use(
     }
   })
 )
+// app.use(
+//   koaBody({
+//     multipart: true
+//   })
+// )
 app.use(json())
 app.use(logger())
 app.use(require('koa-static')(__dirname + '/static'))

@@ -4,7 +4,6 @@ const User = require('../models/user')
 const message = require('../utils/message')
 module.exports = {
   async check(ctx, next) {
-    console.log('ctx.state', ctx.state)
     ctx.body = message({
       username: ctx.state.user.username
     })
